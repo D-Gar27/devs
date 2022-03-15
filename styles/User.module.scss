@@ -1,0 +1,51 @@
+@import './variables';
+
+.user_page {
+  .user_info {
+    @include flex(center, center, $vertical: true, $gap: 1rem);
+    display: none;
+    width: 100%;
+    .user_pic {
+      width: 4rem;
+      aspect-ratio: 1 / 1;
+      border-radius: 100vw;
+      background-color: $yellow;
+    }
+    .user_name {
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    .user_bio {
+      font-size: 0.9rem;
+      color: $whiteGray;
+      text-align: center;
+    }
+    .follow_btn {
+      font-size: 0.9rem;
+    }
+  }
+  .posts_from_user {
+    h3 {
+      margin-bottom: 2rem;
+      font-size: $sub_heading;
+    }
+  }
+}
+
+@include tablet {
+  .user_page {
+    grid-template-columns: 1fr;
+    .user_info {
+      display: flex;
+    }
+    .posts_from_user {
+      h3 {
+        margin-top: 2rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        font-size: clamp(1.2rem, 10vw + 1rem, 1.5rem);
+      }
+    }
+  }
+}

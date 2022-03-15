@@ -1,0 +1,135 @@
+@import '../variables';
+
+.sidebar {
+  width: 100%;
+  height: max-content;
+  position: sticky;
+  top: 5rem;
+  left: 0;
+  margin-top: -2rem;
+  padding-left: 2rem;
+  padding-block: 2rem;
+  &::before {
+    content: '';
+    background-color: $blue;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100vh;
+  }
+  .search_bar {
+    width: 100%;
+    @include flex(space-between, center);
+    padding: 0.5rem;
+    border: solid 2px $blue;
+    border-radius: $radius-sm;
+    input {
+      background-color: transparent;
+      color: $whiteGray;
+      border: none;
+      outline: none;
+    }
+    .search_icon {
+      color: $blue;
+    }
+  }
+  .popular_posts {
+    margin-top: 2rem;
+    @include flex(center, flex-start, $vertical: true, $gap: 1rem);
+    h5 {
+      margin-bottom: 0.5rem;
+    }
+    .popular_post {
+      // @include flex(flex-start, center, $gap: 0.5rem);
+      .authorr {
+        @include flex(flex-start, center, $gap: 0.5rem);
+        .author_pic {
+          width: 1.25rem;
+          aspect-ratio: 1 / 1;
+          position: relative;
+          border-radius: 100%;
+          background-color: $yellow;
+        }
+        .author_name {
+          font-size: 0.8rem;
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .post_title {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+  }
+  .people_to_follow {
+    margin-top: 2rem;
+    @include flex(center, flex-start, $vertical: true, $gap: 1rem);
+    h5 {
+      margin-bottom: 0.5rem;
+    }
+    .person {
+      @include flex(space-between, center);
+      width: 100%;
+      .person_info {
+        .person_name_pic {
+          @include flex(flex-start, center, $gap: 0.5rem);
+          .person_pic {
+            width: 2rem;
+            aspect-ratio: 1 / 1;
+            position: relative;
+            border-radius: 100%;
+            background-color: $yellow;
+          }
+          .person_name {
+            font-size: 0.9rem;
+            font-weight: bold;
+            cursor: pointer;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+        .person_bio {
+          margin-top: 0.5rem;
+          font-size: 0.75rem;
+          color: $whiteGray;
+        }
+      }
+    }
+  }
+  .author {
+    margin-top: 2rem;
+    width: 100%;
+    @include flex(center, flex-start, $vertical: true, $gap: 0.75rem);
+    .author_pic {
+      width: 3rem;
+      aspect-ratio: 1 / 1;
+      background-color: $yellow;
+      border-radius: 100%;
+      margin-bottom: 0.5rem;
+    }
+    .author_name_bio {
+      width: 100%;
+      @include flex(space-between, center);
+      .author_bio {
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        color: $whiteGray;
+      }
+      .author_name {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .sidebar {
+    display: none;
+  }
+}

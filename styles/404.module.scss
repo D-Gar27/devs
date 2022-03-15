@@ -1,0 +1,11 @@
+@import './variables';
+
+.notFound {
+  width: 100vw;
+  height: 100vh;
+  @include flex(center, center, $vertical: true);
+  h2 {
+    font-size: clamp(4rem, 5vw + 1rem, 5rem);
+    color: $blue;
+  }
+}

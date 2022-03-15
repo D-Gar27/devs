@@ -1,0 +1,42 @@
+@import './variables';
+
+.make_post_page {
+  @include flex(center, center);
+  .make_form {
+    width: 100%;
+    @include flex(center, center, $vertical: true, $gap: 2rem);
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      text-align: center;
+      font-size: clamp(1.25rem, 15vw + 1rem, 2rem);
+      color: white;
+    }
+    textarea {
+      margin-top: 2rem;
+      width: 100%;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      font-size: clamp(1rem, 10vw + 1rem, 1.25rem);
+      color: white;
+      min-height: 55vh;
+    }
+    .publish_btn {
+      background-color: transparent;
+      color: $blue;
+      border: solid 2px $blue;
+      border-radius: $radius-md;
+      font-weight: bold;
+      padding: 0.5em 1.5em;
+      cursor: pointer;
+      @include speed(background-color);
+      @include flex(center, center, $gap: 0.5rem);
+      &:hover {
+        background-color: rgba($color: $blue, $alpha: 0.25);
+      }
+    }
+  }
+}
